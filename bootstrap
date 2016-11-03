@@ -4,8 +4,6 @@
 # because they might not work until the bootstrap
 # is finished.
 
-#exit 1; # remove this line from defintions/bootstrap to actually enable the bootstrap
-
 set -e
 
 function install_homebrew() {
@@ -16,11 +14,19 @@ function xcode_cli_installed() {
   pkgutil --pkg-info=com.apple.pkg.CLTools_Executables > /dev/null
 }
 
-# Install XCode CLI Tools
-xcode_cli_installed || xcode-select --install
+function xcode_cli_install() {
+  xcode-select --install
+  echo "Press return after XCode CLI installation"
+  read
+}
 
-# Install Homebrew
-xcode_cli_installed && [[ -d "/usr/local/Homebrew" ]] || install_homebrew
+# Install XCode CLI Tools
+xcode_cli_installed || xcode_cli_install
+
+# Install Homebrew if XCode is present
+if [[ $(xcode_cli_installed) -eq 0 ]]; then
+  [[ -d "/usr/local/Homebrew" ]] || install_homebrew
+fi
 
 # If bash is lower than version 4
 # grind won't work.
