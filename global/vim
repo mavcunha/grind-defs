@@ -9,8 +9,8 @@ do_run "git clone https://github.com/mavcunha/vim.git ${HOME}/Projects/vim"
 do_run "mkdir -p ${HOME}/.vim/bundle"
   unless_dir "${HOME}/.vim/bundle"
 
-do_run "ln -f -s ${HOME}/Projects/vim/vimrc ${HOME}/.vim/vimrc"
-  unless_link "${HOME}/.vim/vimrc"
+do_run "ln -f -s ${HOME}/Projects/vim/vimrc ${HOME}/.vimrc"
+  unless_link "${HOME}/.vimrc"
 
 function install_bundles() {
   local bundles=("${!1}")
