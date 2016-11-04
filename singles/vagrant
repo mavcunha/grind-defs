@@ -1,0 +1,5 @@
+use "brew"
+
+brew_cask "virtualbox"
+
+brew_cask "vagrant"
