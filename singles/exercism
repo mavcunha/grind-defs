@@ -1,0 +1,14 @@
+# vim: ft=sh
+use "brew"
+use "secret-keys"
+
+brew_pkg "exercism"
+
+do_run "mkdir -p ${HOME}/Projects/exercism"
+  unless_dir "${HOME}/Projects/exercism"
+
+do_run "exercism configure --key=$(key 'exercism-api-key')"
+  unless "grep -q apiKey.*$(key 'exercism-api-key') ${HOME}/.exercism.json"
+
+do_run "exercism configure --dir=${HOME}/Projects/exercism"
+  unless "grep -q dir.*${HOME}/Projects/exercism ${HOME}/.exercism.json"
