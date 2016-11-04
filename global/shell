@@ -1,5 +1,4 @@
 # vim: ft=sh
+use "brew"
 
-do_run "brew install bash"
- unless_file "/usr/local/bin/bash"
-
+brew "bash"

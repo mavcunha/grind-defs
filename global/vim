@@ -1,7 +1,7 @@
 # vim: ft=sh
+use "brew"
 
-do_run "brew install vim"
-  unless_file "/usr/local/bin/vim"
+brew "vim"
 
 do_run "git clone https://github.com/mavcunha/vim.git ${HOME}/Projects/vim"
   unless_dir "${HOME}/Projects/vim"

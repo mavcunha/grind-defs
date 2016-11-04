@@ -1,3 +1,4 @@
+# vim: ft=sh
+use "brew"
 
-do_run "brew install rbenv"
-  unless_on_path "rbenv"
+brew "rbenv"

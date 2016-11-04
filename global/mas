@@ -1,6 +1,5 @@
 # vim: ft=sh
-use "secret-keys"
+use "brew"
 
 # https://github.com/mas-cli/mas
-do_run "brew install mas"
-  unless_on_path "mas"
+brew "mas"

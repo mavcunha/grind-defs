@@ -1,3 +1,4 @@
+# vim: ft=sh
+use "brew"
 
-do_run "brew install homebrew/versions/tomcat7"
- unless_dir "/usr/local/Cellar/tomcat7"
+brew "homebrew/versions/tomcat7"
