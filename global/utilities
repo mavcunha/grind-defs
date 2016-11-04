@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-brew "httpie"
-brew "jq"
-brew "leiningen"
-brew "git"
+brew_pkg "httpie"
+brew_pkg "jq"
+brew_pkg "leiningen"
+brew_pkg "git"

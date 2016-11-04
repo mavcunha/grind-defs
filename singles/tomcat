@@ -1,4 +1,4 @@
 # vim: ft=sh
 use "brew"
 
-brew "homebrew/versions/tomcat7"
+brew_pkg "homebrew/versions/tomcat7"

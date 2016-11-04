@@ -1,4 +1,4 @@
 # vim: ft=sh
 use "brew"
 
-brew "rbenv"
+brew_pkg "rbenv"

@@ -1,4 +1,4 @@
 # vim: ft=sh
 use "brew"
 
-brew "bash"
+brew_pkg "bash"

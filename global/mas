@@ -2,4 +2,4 @@
 use "brew"
 
 # https://github.com/mas-cli/mas
-brew "mas"
+brew_pkg "mas"
