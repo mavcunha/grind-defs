@@ -1,4 +1,5 @@
 # vim: ft=sh
+use "brew"
 
 brew_pkg "httpie"
 brew_pkg "jq"
