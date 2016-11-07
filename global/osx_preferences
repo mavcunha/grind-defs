@@ -1,0 +1,11 @@
+# vim: ft=sh
+use "macos-defaults"
+
+# enable Dock auto-hiding
+defaults com.apple.dock autohide 1
+
+# Full Access Keyboard
+defaults -g AppleKeyboardUIMode 2
+
+# Enable bluetooth mouse right click
+defaults com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
