@@ -1,0 +1,6 @@
+# vim: ft=sh
+
+use "brew"
+
+brew_pkg "mitmproxy"
+brew_cask "postman"

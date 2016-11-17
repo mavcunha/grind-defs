@@ -1,0 +1,6 @@
+# vim: ft=sh
+use "brew"
+
+# Stuff for java development
+
+brew_pkg "maven"
