@@ -1,6 +1,9 @@
 # vim: ft=sh
 use "brew"
+use "appdmg"
 
 # Stuff for java development
 
 brew_pkg "maven"
+
+appdmg "IntelliJ IDEA" "https://download-cf.jetbrains.com/idea/ideaIU-2016.3.dmg"

@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+use "appdmg"
+
+appdmg "Transmission" "https://github.com/transmission/transmission-releases/raw/master/Transmission-2.92.dmg"
