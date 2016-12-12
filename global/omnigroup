@@ -1,0 +1,3 @@
+use "appdmg"
+
+appdmg "OmniGraffle" "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.11/OmniGraffle-7.2.2.dmg"
