@@ -15,8 +15,10 @@ function intellij_check() {
 
   current_version=$(xpath '/Applications/IntelliJ IDEA.app/Contents/Info.plist'  "//key[.='CFBundleShortVersionString']/following-sibling::*[1]/text()" 2> /dev/null)
 
-  unless "[[ "${current_version}" == "${INTELLIJ_VERSION}" ]]"
+  # allow installed versions that are greater than defined version
+  unless "[[ "${current_version//./}" -ge "${INTELLIJ_VERSION//./}" ]]"
 }
 
 appdmg_custom "https://download.jetbrains.com/idea/ideaIU-${INTELLIJ_VERSION}.dmg"
   unless "intellij_check"
+
