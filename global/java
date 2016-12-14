@@ -6,19 +6,4 @@ use "appdmg"
 
 brew_pkg "maven"
 
-# IntelliJ installation based on version
-INTELLIJ_VERSION="2016.3"
-
-function intellij_check() {
-  unless_dir "/Applications/IntelliJ IDEA.app"
-  stop_on_fail
-
-  current_version=$(xpath '/Applications/IntelliJ IDEA.app/Contents/Info.plist'  "//key[.='CFBundleShortVersionString']/following-sibling::*[1]/text()" 2> /dev/null)
-
-  # allow installed versions that are greater than defined version
-  unless "[[ "${current_version//./}" -ge "${INTELLIJ_VERSION//./}" ]]"
-}
-
-appdmg_custom "https://download.jetbrains.com/idea/ideaIU-${INTELLIJ_VERSION}.dmg"
-  unless "intellij_check"
-
+appdmg "IntelliJ IDEA" "https://download.jetbrains.com/idea/ideaIU-2016.3.dmg"
