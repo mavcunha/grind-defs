@@ -1,5 +1,0 @@
-# vim: ft=sh
-use "brew"
-
-# https://github.com/mas-cli/mas
-brew_pkg "mas"
