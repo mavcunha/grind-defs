@@ -2,3 +2,9 @@
 use "brew"
 
 brew_pkg "bash"
+
+stop_on_fail "Can't setup bash if installation failed."
+
+# set homebrew bash as default shell
+do_run "dscl . -create ${HOME} UserShell /usr/local/bin/bash"
+ unless "dscl . -read ${HOME} UserShell | grep -q '/usr/local/bin/bash' 2> /dev/null "
