@@ -1,0 +1,14 @@
+# vim: ft=sh
+use "brew"
+use "mas"
+
+brew_pkg "mas"
+
+appstore 'Airmail 3' 918858936
+appstore 'Pomodoro Timer' 872515009
+appstore Kindle 405399194
+appstore Caffeine 411246225
+appstore 1Password 443987910
+appstore Fantastical 975937182
+appstore MindNode 992076693
+appstore Keynote 409183694
