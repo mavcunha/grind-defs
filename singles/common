@@ -1,0 +1,5 @@
+# vim: ft=sh
+
+# set common variables
+PROJECTS_DIR="${HOME}/Projects"
+GITHUB_URL="https://github.com/mavcunha"

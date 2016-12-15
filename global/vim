@@ -1,15 +1,16 @@
 # vim: ft=sh
-use "brew"
+run_def "singles/common"
 
+use "brew"
 brew_pkg "vim"
 
-do_run "git clone https://github.com/mavcunha/vim.git ${HOME}/Projects/vim"
-  unless_dir "${HOME}/Projects/vim"
+do_run "git clone ${GITHUB_URL}/vim.git ${PROJECTS_DIR}/vim"
+  unless_dir "${PROJECTS_DIR}/vim"
 
 do_run "mkdir -p ${HOME}/.vim/bundle"
   unless_dir "${HOME}/.vim/bundle"
 
-do_run "ln -f -s ${HOME}/Projects/vim/vimrc ${HOME}/.vimrc"
+do_run "ln -f -s ${PROJECTS_DIR}/vim/vimrc ${HOME}/.vimrc"
   unless_link "${HOME}/.vimrc"
 
 function install_bundles() {
@@ -31,4 +32,3 @@ vim_bundles=(
   'vim-ruby/vim-ruby')
 
 install_bundles vim_bundles[@]
-
