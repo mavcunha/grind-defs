@@ -1,6 +1,8 @@
 # vim: ft=sh
-use "brew"
 
+run_def "singles/common" # load common settings
+
+use "brew"
 brew_pkg "bash"
 
 stop_on_fail "Can't setup bash if installation failed."
@@ -19,3 +21,7 @@ do_run "_as_admin_run 'echo ${HOMEBREW_BASH} >> /etc/shells'"
 # set homebrew bash as default shell
 do_run "dscl . -create ${HOME} UserShell ${HOMEBREW_BASH}"
  unless "dscl . -read ${HOME} UserShell | grep -q '${HOMEBREW_BASH}' 2> /dev/null "
+
+# clone custom bash settings/functions
+do_run "git clone ${GITHUB_URL}/bash ${PROJECTS_DIR}/bash"
+ unless_dir "${PROJECTS_DIR}/bash"
