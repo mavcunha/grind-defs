@@ -1,8 +1,22 @@
 # vim: ft=sh
 use "brew"
+use "files"
 
 brew_pkg "httpie"
 brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "bats"
+
+# CPAN configuration directory
+do_run "mkdir -p ${HOME}/.cpan/CPAN"
+ unless_dir "${HOME}/.cpan/CPAN"
+
+# Default configuration for CPAN
+file "cpan/MyConfig.pm" "${HOME}/.cpan/CPAN/MyConfig.pm"
+
+stop_on_fail "Can't proceed without CPAN configured"
+
+# URI::Escape is requirement for googlesearch script
+do_run "cpan URI::Escape"
+ unless "perl -MURI::Escape -e ';' 2> /dev/null"
