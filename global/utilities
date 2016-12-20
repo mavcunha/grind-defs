@@ -1,6 +1,7 @@
 # vim: ft=sh
 use "brew"
 use "appdmg"
+use "files"
 
 brew_pkg "httpie"
 brew_pkg "jq"
@@ -8,5 +9,18 @@ brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "bats"
 
-appdmg "QuickSilver" "https://qs0.qsapp.com/plugins/download.php"
+appdmg "Quicksilver" "https://qs0.qsapp.com/plugins/download.php"
 appdmg "Transmission" "https://github.com/transmission/transmission-releases/raw/master/Transmission-2.92.dmg"
+
+# CPAN configuration directory
+do_run "mkdir -p ${HOME}/.cpan/CPAN"
+ unless_dir "${HOME}/.cpan/CPAN"
+
+# Default configuration for CPAN
+file "cpan/MyConfig.pm" "${HOME}/.cpan/CPAN/MyConfig.pm"
+
+stop_on_fail "Can't proceed without CPAN configured"
+
+# URI::Escape is requirement for googlesearch script
+do_run "cpan URI::Escape"
+ unless "perl -MURI::Escape -e ';' 2> /dev/null"
