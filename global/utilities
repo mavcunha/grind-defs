@@ -1,8 +1,12 @@
 # vim: ft=sh
 use "brew"
+use "appdmg"
 
 brew_pkg "httpie"
 brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "bats"
+
+appdmg "QuickSilver" "https://qs0.qsapp.com/plugins/download.php"
+appdmg "Transmission" "https://github.com/transmission/transmission-releases/raw/master/Transmission-2.92.dmg"
