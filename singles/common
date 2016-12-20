@@ -3,3 +3,11 @@
 # set common variables
 PROJECTS_DIR="${HOME}/Projects"
 GITHUB_URL="https://github.com/mavcunha"
+
+function github_mvaltas() {
+  local repository="${GITHUB_URL}/${1}.git"
+  local target_dir="${PROJECTS_DIR}/${1}"
+
+  do_run "git clone ${repository} ${target_dir}"
+    unless_dir "${target_dir}"
+}
