@@ -1,0 +1,4 @@
+# vim: ft=sh
+run_def "singles/common"
+
+github_mvaltas "devcli"

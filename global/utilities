@@ -1,5 +1,8 @@
 # vim: ft=sh
+run_def "singles/common"
+
 use "brew"
+use "appdmg"
 use "files"
 
 brew_pkg "httpie"
@@ -7,6 +10,8 @@ brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "bats"
+
+appdmg "Quicksilver" "https://qs0.qsapp.com/plugins/download.php"
 
 # CPAN configuration directory
 do_run "mkdir -p ${HOME}/.cpan/CPAN"
@@ -20,3 +25,6 @@ stop_on_fail "Can't proceed without CPAN configured"
 # URI::Escape is requirement for googlesearch script
 do_run "cpan URI::Escape"
  unless "perl -MURI::Escape -e ';' 2> /dev/null"
+
+# some repositories needed
+github_mvaltas "selecta"
