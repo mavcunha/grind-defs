@@ -10,6 +10,10 @@ brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "bats"
+brew_pkg "nodenv"
+
+do_run "nodenv install 5.4.1"
+ unless "nodenv versions | grep -q 5.4.1"
 
 appdmg "Quicksilver" "https://qs0.qsapp.com/plugins/download.php"
 
