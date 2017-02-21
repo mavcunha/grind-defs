@@ -11,7 +11,7 @@ brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "bats"
 brew_pkg "nodenv"
-brew_pkg "npm"
+brew_pkg "node"
 
 do_run "nodenv install 5.4.1"
  unless "nodenv versions | grep -q 5.4.1"
