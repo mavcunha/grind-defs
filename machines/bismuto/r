@@ -1,0 +1,9 @@
+# vim: ft=sh
+use "brew"
+
+# Installs the R package for analysis
+
+do_run "brew tap homebrew/science"
+ unless "brew tap | grep -q science"
+
+brew_pkg "r"

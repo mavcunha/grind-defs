@@ -1,0 +1,16 @@
+# vim: ft=sh
+use "appdmg"
+
+appdmg "IntelliJ IDEA" "https://download.jetbrains.com/idea/ideaIU-2017.1.dmg"
+
+function update_idea_properties() {
+  cd '/Applications/IntelliJ IDEA.app/Contents/bin/'
+  sed -i.bak 's/\(idea.max.intellisense.filesize\).*/\1=25000/' idea.properties
+}
+function check_idea_properties() {
+  cd '/Applications/IntelliJ IDEA.app/Contents/bin/'
+  grep -q 'idea.max.intellisense.filesize=25000' idea.properties
+}
+
+do_run "update_idea_properties"
+ unless "check_idea_properties"
