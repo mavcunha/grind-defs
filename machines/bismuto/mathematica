@@ -1,0 +1,3 @@
+use "brew"
+
+brew_cask "eclipse-ide" # for Mathematica Workbench

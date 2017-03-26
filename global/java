@@ -3,3 +3,4 @@ use "brew"
 
 # Stuff for java development
 brew_pkg "maven"
+brew_pkg "gradle"
