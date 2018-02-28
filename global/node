@@ -1,0 +1,9 @@
+# vim: ft=sh
+run_def "singles/common"
+
+use "brew"
+
+brew_pkg "nodenv"
+brew_pkg "node"
+do_run "nodenv install 5.4.1"
+ unless "nodenv versions | grep -q 5.4.1"

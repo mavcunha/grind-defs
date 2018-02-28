@@ -1,7 +1,7 @@
 # vim: ft=sh
 use "appdmg"
 
-appdmg "IntelliJ IDEA" "https://download.jetbrains.com/idea/ideaIU-2017.1.dmg"
+appdmg "IntelliJ IDEA" "https://download.jetbrains.com/idea/ideaIU-2017.3.dmg"
 
 function update_idea_properties() {
   cd '/Applications/IntelliJ IDEA.app/Contents/bin/'
