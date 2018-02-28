@@ -18,6 +18,7 @@ do_run "nodenv install 5.4.1"
 
 appdmg "Quicksilver" "https://qs0.qsapp.com/plugins/download.php"
 
+##################
 # CPAN configuration directory
 do_run "mkdir -p ${HOME}/.cpan/CPAN"
  unless_dir "${HOME}/.cpan/CPAN"
@@ -26,10 +27,15 @@ do_run "mkdir -p ${HOME}/.cpan/CPAN"
 file "cpan/MyConfig.pm" "${HOME}/.cpan/CPAN/MyConfig.pm"
 
 stop_on_fail "Can't proceed without CPAN configured"
+##################
 
 # URI::Escape is requirement for googlesearch script
 do_run "cpan URI::Escape"
  unless "perl -MURI::Escape -e ';' 2> /dev/null"
 
-# some repositories needed
+# Code hosted on github
 github_mvaltas "selecta"
+
+# GPG Tools for signing messages and docs
+brew_cask "gpgtools"
+
