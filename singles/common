@@ -11,3 +11,10 @@ function github_mvaltas() {
   do_run "git clone ${repository} ${target_dir}"
     unless_dir "${target_dir}"
 }
+
+function as_admin_run() {
+  local cmd="${1}"
+  in_yellow "Requiring admin privileges\n"
+  osascript -e "do shell script \"${cmd}\"  with administrator privileges "
+}
+

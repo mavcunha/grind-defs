@@ -1,5 +1,0 @@
-# vim: ft=sh
-use "brew"
-
-brew_pkg "adr-tools"
-brew_pkg "terraform"

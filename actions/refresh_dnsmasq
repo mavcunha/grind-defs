@@ -1,0 +1,9 @@
+# vim: ft=sh
+
+run_def "singles/common"
+
+use "files"
+
+file_force "dnsmasq/dnsmasq.conf" "/usr/local/etc/dnsmasq.conf"
+
+as_admin_run "pkill dnsmasq"

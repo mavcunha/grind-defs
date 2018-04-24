@@ -9,13 +9,7 @@ stop_on_fail "Can't setup bash if installation failed."
 
 HOMEBREW_BASH="/usr/local/bin/bash"
 
-function _as_admin_run() {
-  local cmd="${1}"
-  in_yellow "Requiring admin privileges\n"
-  osascript -e "do shell script \"${cmd}\"  with administrator privileges "
-}
-
-do_run "_as_admin_run 'echo ${HOMEBREW_BASH} >> /etc/shells'"
+do_run "as_admin_run 'echo ${HOMEBREW_BASH} >> /etc/shells'"
  unless "grep -q '${HOMEBREW_BASH}' /etc/shells"
 
 # set homebrew bash as default shell
