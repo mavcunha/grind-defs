@@ -5,5 +5,6 @@ run_def "singles/common"
 use "files"
 
 file_force "dnsmasq/dnsmasq.conf" "/usr/local/etc/dnsmasq.conf"
+dir_force "dnsmasq/dnsmasq.d/" "/usr/local/etc/dnsmasq.d/"
 
 as_admin_run "pkill dnsmasq"

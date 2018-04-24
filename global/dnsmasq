@@ -14,13 +14,17 @@ DAEMON_FILE='homebrew.mxcl.dnsmasq.plist'
 # TODO: Need a way to not require 3 times the admin password
 function install_dnsmasq_daemon() {
   file_path=$(find /usr/local/Cellar/dnsmasq -type f -name "${DAEMON_FILE}" )
-  as_admin_run "cp ${file_path} /Library/LaunchDaemons"
+  as_admin_run "cp -v ${file_path} /Library/LaunchDaemons"
   as_admin_run "launchctl load /Library/LaunchDaemons/${DAEMON_FILE}"
   as_admin_run "launchctl start ${DAEMON_FILE%%.plist}"
 
 }
 
 file "dnsmasq/dnsmasq.conf" "/usr/local/etc/dnsmasq.conf"
+dir  "dnsmasq/dnsmasq.d/" "/usr/local/etc/dnsmasq.d/"
 
 do_run "install_dnsmasq_daemon"
   unless_file "/Library/LaunchDaemons/${DAEMON_FILE}"
+
+do_run "in_yellow '127.0.0.1 is not on /etc/resolv.conf, add it to your DNS configuration\n'"
+  unless "grep -qE '^nameserver.*127.0.0.1' /etc/resolv.conf"
