@@ -9,7 +9,9 @@ brew_pkg "httpie"
 brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
-brew_pkg "bats"
+brew_pkg "gnupg"
+
+brew_cask "keybase"
 
 appdmg "Quicksilver" "https://qs0.qsapp.com/plugins/download.php"
 
@@ -30,7 +32,3 @@ do_run "cpan URI::Escape"
 
 # Code hosted on github
 github_mvaltas "selecta"
-
-# GPG Tools for signing messages and docs
-brew_cask "gpgtools"
-
