@@ -10,6 +10,7 @@ brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "gnupg"
+brew_pkg "pmd"
 
 brew_cask "keybase"
 
