@@ -1,0 +1,7 @@
+# vim: ft=sh
+
+run_def "singles/common"
+
+use "brew"
+
+brew_pkg "lua"
