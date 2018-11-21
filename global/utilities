@@ -11,6 +11,7 @@ brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "gnupg"
 brew_pkg "pmd"
+brew_pkg "restic" # cmdline backup tool
 
 brew_cask "keybase"
 
