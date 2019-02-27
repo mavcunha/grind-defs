@@ -4,13 +4,9 @@ use "mas"
 
 brew_pkg "mas"
 
-appstore 'Airmail 3' 918858936
-appstore 'Pomodoro Timer' 872515009
-appstore Kindle 405399194
-appstore 1Password 443987910
-appstore MindNode 992076693
-appstore Keynote 409183694
-appstore Slack 803453959
-appstore Magnet 441258766
-appstore Notability 736189492
-appstore UlyssesMac 1225570693
+#appstore Kindle 405399194
+#appstore MindNode 992076693
+#appstore Keynote 409183694
+#appstore Slack 803453959
+#appstore Magnet 441258766
+#appstore UlyssesMac 1225570693

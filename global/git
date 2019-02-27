@@ -2,13 +2,5 @@
 
 run_def "singles/common" # load common settings
 
-do_run "git clone ${GITHUB_URL}/gitconfig"
- unless_dir "${PROJECTS_DIR}/gitconfig"
-
-stop_on_fail "Can't configure without gitconfig repository"
-
-do_run "ln -s ${PROJECTS_DIR}/gitconfig/gitconfig ${HOME}/.gitconfig"
+do_run "ln -s ${PROJECTS_DIR}/bash/dotfiles/gitconfig ${HOME}/.gitconfig"
  unless_link "${HOME}/.gitconfig"
-
-do_run "ln -s ${PROJECTS_DIR}/gitconfig/template ${HOME}/.git_template"
- unless_link "${HOME}/.git_template"
