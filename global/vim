@@ -4,14 +4,14 @@ run_def "singles/common"
 use "brew"
 brew_pkg "vim"
 
-do_run "git clone ${GITHUB_URL}/vim.git ${PROJECTS_DIR}/vim"
-  unless_dir "${PROJECTS_DIR}/vim"
+github_mvaltas "bash"
+
+# link vimrc to home
+do_run "ln -f -s ${PROJECTS_DIR}/bash/dotfiles/vimrc ${HOME}/.vimrc"
+  unless_link "${HOME}/.vimrc"
 
 do_run "mkdir -p ${HOME}/.vim/bundle"
   unless_dir "${HOME}/.vim/bundle"
-
-do_run "ln -f -s ${PROJECTS_DIR}/vim/vimrc ${HOME}/.vimrc"
-  unless_link "${HOME}/.vimrc"
 
 function install_bundles() {
   local bundles=("${!1}")

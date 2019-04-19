@@ -10,9 +10,13 @@ brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 brew_pkg "gnupg"
+brew_pkg "pass"
 brew_pkg "restic" # cmdline backup tool
 
 brew_cask "keybase"
+
+# Code hosted on github
+github_mvaltas "selecta"
 
 ##################
 # CPAN configuration directory
@@ -29,5 +33,3 @@ stop_on_fail "Can't proceed without CPAN configured"
 do_run "cpan URI::Escape"
  unless "perl -MURI::Escape -e ';' 2> /dev/null"
 
-# Code hosted on github
-github_mvaltas "selecta"

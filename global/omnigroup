@@ -1,3 +1,4 @@
 use "appdmg"
 
-appdmg "OmniGraffle" "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.11/OmniGraffle-7.2.2.dmg"
+appdmg "OmniGraffle" "https://downloads.omnigroup.com/software/MacOSX/10.13/OmniGraffle-7.9.4.dmg"
+appdmg "OmniFocus" "https://downloads.omnigroup.com/software/MacOSX/10.13/OmniFocus-3.2.1.dmg"
