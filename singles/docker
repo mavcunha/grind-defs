@@ -1,6 +1,3 @@
 # vim: ft=sh
 use "brew"
-
-brew_pkg "docker"
-brew_pkg "docker-compose"
 brew_cask "docker"
