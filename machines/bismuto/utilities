@@ -1,6 +1,4 @@
 # vim: ft=sh
 use "brew"
 
-brew_pkg "tesseract"     # OCR command-line
-brew_pkg "sane-backends" # SANE (scanner access through command-line)
-brew_pkg "ffmpeg"
+brew_pkg "restic" # cmdline backup tool
