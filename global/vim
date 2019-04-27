@@ -26,6 +26,7 @@ vim_bundles=(
   'tpope/vim-unimpaired'
   'mavcunha/rainbow_parentheses.vim'
   'vim-ruby/vim-ruby'
-  'davidoc/taskpaper.vim')
+  'davidoc/taskpaper.vim'
+  'arnoudbuzing/wolfram-vim')
 
 install_bundles vim_bundles[@]
