@@ -5,3 +5,4 @@ run_def "singles/common"
 use "brew"
 
 brew_pkg "lua"
+brew_pkg "luarocks"

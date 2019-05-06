@@ -7,8 +7,6 @@ appstore 'GeoGebra 5' 845142834
 # media and music
 appstore 'DaVinci Resolve' 571213070
 appstore 'Logic Pro X' 634148309
-appstore iMovie 408981434
-appstore GarageBand 682658836
 appstore Capo 696977615
 appstore Tempomate 1157672888
 
@@ -17,6 +15,5 @@ appstore Numbers 409203825
 appstore Pages 409201541
 
 appstore OmniGraphSketcher 404651688
-appstore Tweetbot 557168941
 appstore Xcode 497799835
 appstore Downcast 668429425
