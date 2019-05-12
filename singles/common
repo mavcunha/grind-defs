@@ -2,11 +2,13 @@
 
 # set common variables
 PROJECTS_DIR="${HOME}/Projects"
-GITHUB_URL="https://github.com/mavcunha"
+GITHUB_URL="https://github.com/"
 
-function github_mvaltas() {
+function github() {
+  [[ -z ${1} ]] && error "Missing user/repository argument"
+  local user_repo=(${1//\// })
   local repository="${GITHUB_URL}/${1}.git"
-  local target_dir="${PROJECTS_DIR}/${1}"
+  local target_dir="${PROJECTS_DIR}/${user_repo[1]}"
 
   do_run "git clone ${repository} ${target_dir}"
     unless_dir "${target_dir}"

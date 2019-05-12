@@ -1,5 +1,8 @@
 # vim: ft=sh
 use "brew"
+
 run_def "singles/common"
 
-github_mvaltas "blog"
+brew_pkg "leiningen"
+
+github "mavcunha/blog"

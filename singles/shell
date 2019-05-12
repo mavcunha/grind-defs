@@ -17,4 +17,14 @@ do_run "dscl . -create ${HOME} UserShell ${HOMEBREW_BASH}"
  unless "dscl . -read ${HOME} UserShell | grep -q '${HOMEBREW_BASH}' 2> /dev/null "
 
 # clone custom bash settings/functions
-github_mvaltas "bash"
+github "mavcunha/bash"
+
+function write_profile() {
+  cat >> ${HOME}/.bash_profile <<'EOF'
+BASH_LOAD_ROOT=${HOME}/Projects/bash
+. ${BASH_LOAD_ROOT}/load_bash
+EOF
+}
+
+do_run "write_profile"
+  unless "grep -q BASH_LOAD_ROOT ${HOME}/.bash_profile"
