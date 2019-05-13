@@ -2,4 +2,4 @@
 use "brew"
 
 brew_cask  "mactex" # build LaTeX documents
-brew_pkg "imagemagick" # convert for LaTex PNG convertions
+brew_pkg   "imagemagick" # convert for LaTex PNG convertions
