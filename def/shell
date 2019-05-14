@@ -1,8 +1,9 @@
 # vim: ft=sh
-
-run_def "singles/common" # load common settings
+run_def "def/common" # load common settings
 
 use "brew"
+use "github"
+
 brew_pkg "bash"
 
 stop_on_fail "Can't setup bash if installation failed."
@@ -17,7 +18,7 @@ do_run "dscl . -create ${HOME} UserShell ${HOMEBREW_BASH}"
  unless "dscl . -read ${HOME} UserShell | grep -q '${HOMEBREW_BASH}' 2> /dev/null "
 
 # clone custom bash settings/functions
-github "mavcunha/bash"
+github "mavcunha/bash" into: "${HOME}/Projects"
 
 function write_profile() {
   cat >> ${HOME}/.bash_profile <<'EOF'

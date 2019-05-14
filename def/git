@@ -1,6 +1,10 @@
 # vim: ft=sh
+use "brew"
+use "github"
 
-run_def "singles/common" # load common settings
+brew_pkg "git"
 
-do_run "ln -s ${PROJECTS_DIR}/bash/dotfiles/gitconfig ${HOME}/.gitconfig"
+github "mavcunha/bash" into: "${HOME}/Projects"
+
+do_run "ln -s ${HOME}/Projects/bash/dotfiles/gitconfig ${HOME}/.gitconfig"
  unless_link "${HOME}/.gitconfig"

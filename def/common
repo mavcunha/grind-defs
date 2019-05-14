@@ -2,21 +2,9 @@
 
 # set common variables
 PROJECTS_DIR="${HOME}/Projects"
-GITHUB_URL="https://github.com/"
-
-function github() {
-  [[ -z ${1} ]] && error "Missing user/repository argument"
-  local user_repo=(${1//\// })
-  local repository="${GITHUB_URL}/${1}.git"
-  local target_dir="${PROJECTS_DIR}/${user_repo[1]}"
-
-  do_run "git clone ${repository} ${target_dir}"
-    unless_dir "${target_dir}"
-}
 
 function as_admin_run() {
   local cmd="${1}"
   in_yellow "Requiring admin privileges\n"
   osascript -e "do shell script \"${cmd}\"  with administrator privileges "
 }
-

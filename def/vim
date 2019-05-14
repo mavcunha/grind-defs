@@ -6,7 +6,7 @@ brew_pkg "vim"
 github "mavcunha/bash" into: "${HOME}/Projects"
 
 # link vimrc to home
-do_run "ln -f -s ${PROJECTS_DIR}/bash/dotfiles/vimrc ${HOME}/.vimrc"
+do_run "ln -f -s ${HOME}/Projects/bash/dotfiles/vimrc ${HOME}/.vimrc"
   unless_link "${HOME}/.vimrc"
 
 do_run "mkdir -p ${HOME}/.vim/bundle"

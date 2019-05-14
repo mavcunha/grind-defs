@@ -1,9 +1,8 @@
 # vim: ft=sh
-run_def "singles/common"
-
 use "brew"
 use "appdmg"
 use "files"
+use "github"
 
 brew_pkg "httpie"
 brew_pkg "jq"
@@ -15,7 +14,7 @@ brew_pkg "pass"
 brew_cask "keybase"
 
 # Code hosted on github
-github_mvaltas "selecta"
+github "mavcunha/selecta" into: "${HOME}/Projects"
 
 ##################
 # CPAN configuration directory

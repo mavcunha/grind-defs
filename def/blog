@@ -5,4 +5,4 @@ run_def "def/common"
 
 brew_pkg "leiningen"
 
-github "mavcunha/blog"
+github "mavcunha/blog" into: "${HOME}/Projects"
