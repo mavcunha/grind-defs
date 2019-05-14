@@ -1,7 +1,6 @@
 # vim: ft=sh
 use "brew"
-
-run_def "def/common"
+use "github"
 
 brew_pkg "leiningen"
 
