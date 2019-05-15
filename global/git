@@ -1,6 +1,0 @@
-# vim: ft=sh
-
-run_def "singles/common" # load common settings
-
-do_run "ln -s ${PROJECTS_DIR}/bash/dotfiles/gitconfig ${HOME}/.gitconfig"
- unless_link "${HOME}/.gitconfig"

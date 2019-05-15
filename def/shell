@@ -1,0 +1,35 @@
+# vim: ft=sh
+use "brew"
+use "github"
+
+brew_pkg "bash"
+
+stop_on_fail "Shouldn't setup bash if installation failed."
+
+HOMEBREW_BASH="/usr/local/bin/bash"
+
+function as_admin_run() {
+  local cmd="${1}"
+  in_yellow "Requiring admin privileges\n"
+  osascript -e "do shell script \"${cmd}\"  with administrator privileges "
+}
+
+do_run "as_admin_run 'echo ${HOMEBREW_BASH} >> /etc/shells'"
+ unless "grep -q '${HOMEBREW_BASH}' /etc/shells"
+
+# set homebrew bash as default shell
+do_run "dscl . -create ${HOME} UserShell ${HOMEBREW_BASH}"
+ unless "dscl . -read ${HOME} UserShell | grep -q '${HOMEBREW_BASH}' 2> /dev/null "
+
+# clone custom bash settings/functions
+github "mavcunha/bash" "${HOME}/Projects"
+
+function write_profile() {
+  cat >> ${HOME}/.bash_profile <<'EOF'
+BASH_LOAD_ROOT=${HOME}/Projects/bash
+. ${BASH_LOAD_ROOT}/load_bash
+EOF
+}
+
+do_run "write_profile"
+  unless "grep -q BASH_LOAD_ROOT ${HOME}/.bash_profile"

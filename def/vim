@@ -1,12 +1,14 @@
 # vim: ft=sh
 use "brew"
 use "github"
+
 brew_pkg "vim"
 
-github "mavcunha/bash" into: "${HOME}/Projects"
+github "mavcunha/bash"    "${HOME}/Projects"
+github "mavcunha/selecta" "${HOME}/Projects"
 
 # link vimrc to home
-do_run "ln -f -s ${PROJECTS_DIR}/bash/dotfiles/vimrc ${HOME}/.vimrc"
+do_run "ln -f -s ${HOME}/Projects/bash/dotfiles/vimrc ${HOME}/.vimrc"
   unless_link "${HOME}/.vimrc"
 
 do_run "mkdir -p ${HOME}/.vim/bundle"
@@ -16,7 +18,7 @@ function install_bundles() {
   local bundles=("${!1}")
   for b in ${bundles[@]}; do
     local repo=${b}
-    github "${repo}" into: "${HOME}/.vim/bundle"
+    github "${repo}" "${HOME}/.vim/bundle"
   done
 }
 
@@ -26,6 +28,7 @@ vim_bundles=(
   'tpope/vim-unimpaired'
   'mavcunha/rainbow_parentheses.vim'
   'vim-ruby/vim-ruby'
-  'davidoc/taskpaper.vim')
+  'davidoc/taskpaper.vim'
+  'arnoudbuzing/wolfram-vim')
 
 install_bundles vim_bundles[@]

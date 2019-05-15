@@ -1,0 +1,10 @@
+# vim: ft=sh
+
+# Security utilities
+
+use "brew"
+
+brew_pkg "gnupg"
+brew_pkg "pass"
+brew_cask "keybase"
+

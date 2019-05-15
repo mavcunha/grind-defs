@@ -1,5 +1,5 @@
 # vim: ft=sh
 use "brew"
-run_def "singles/common"
+use "github"
 
-github_mvaltas "blog"
+github "mavcunha/blog" "${HOME}/Projects"

@@ -1,21 +1,13 @@
 # vim: ft=sh
-run_def "singles/common"
-
 use "brew"
-use "appdmg"
 use "files"
+use "github"
 
 brew_pkg "httpie"
 brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
-brew_pkg "gnupg"
-brew_pkg "pass"
 
-brew_cask "keybase"
-
-# Code hosted on github
-github_mvaltas "selecta"
 
 ##################
 # CPAN configuration directory

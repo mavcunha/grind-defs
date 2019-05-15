@@ -1,4 +1,5 @@
 # vim: ft=sh
-run_def "singles/common"
 
-github_mvaltas "devcli"
+use "github"
+
+github "mavcunha/devcli" "${HOME}/Projects"
