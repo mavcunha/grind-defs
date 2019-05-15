@@ -1,9 +1,11 @@
 # vim: ft=sh
 use "brew"
 use "github"
+
 brew_pkg "vim"
 
-github "mavcunha/bash" "${HOME}/Projects"
+github "mavcunha/bash"    "${HOME}/Projects"
+github "mavcunha/selecta" "${HOME}/Projects"
 
 # link vimrc to home
 do_run "ln -f -s ${HOME}/Projects/bash/dotfiles/vimrc ${HOME}/.vimrc"

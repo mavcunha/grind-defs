@@ -1,6 +1,5 @@
 # vim: ft=sh
 use "brew"
-use "appdmg"
 use "files"
 use "github"
 
@@ -9,9 +8,6 @@ brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
 
-
-# Code hosted on github
-github "mavcunha/selecta" "${HOME}/Projects"
 
 ##################
 # CPAN configuration directory

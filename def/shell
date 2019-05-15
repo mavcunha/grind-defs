@@ -4,7 +4,7 @@ use "github"
 
 brew_pkg "bash"
 
-stop_on_fail "Can't setup bash if installation failed."
+stop_on_fail "Shouldn't setup bash if installation failed."
 
 HOMEBREW_BASH="/usr/local/bin/bash"
 
