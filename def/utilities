@@ -17,6 +17,9 @@ do_run "mkdir -p ${HOME}/.cpan/CPAN"
 # Default configuration for CPAN
 file "cpan/MyConfig.pm" "${HOME}/.cpan/CPAN/MyConfig.pm"
 
+declare -Ax replace=([_USER_HOME_]="${HOME}")
+file_replace "${HOME}/.cpan/CPAN/MyConfig.pm" replace
+
 stop_on_fail "Can't proceed without CPAN configured"
 ##################
 
