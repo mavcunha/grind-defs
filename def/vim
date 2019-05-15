@@ -3,7 +3,7 @@ use "brew"
 use "github"
 brew_pkg "vim"
 
-github "mavcunha/bash" into: "${HOME}/Projects"
+github "mavcunha/bash" "${HOME}/Projects"
 
 # link vimrc to home
 do_run "ln -f -s ${HOME}/Projects/bash/dotfiles/vimrc ${HOME}/.vimrc"
@@ -16,7 +16,7 @@ function install_bundles() {
   local bundles=("${!1}")
   for b in ${bundles[@]}; do
     local repo=${b}
-    github "${repo}" into: "${HOME}/.vim/bundle"
+    github "${repo}" "${HOME}/.vim/bundle"
   done
 }
 

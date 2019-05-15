@@ -1,4 +1,4 @@
 # vim: ft=sh
 use "github"
 
-github "mavcunha/devcli" into: "${HOME}/Projects"
+github "mavcunha/devcli" "${HOME}/Projects"

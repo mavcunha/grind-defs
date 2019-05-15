@@ -4,4 +4,4 @@ use "github"
 
 brew_pkg "leiningen"
 
-github "mavcunha/blog" into: "${HOME}/Projects"
+github "mavcunha/blog" "${HOME}/Projects"

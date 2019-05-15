@@ -8,13 +8,10 @@ brew_pkg "httpie"
 brew_pkg "jq"
 brew_pkg "leiningen"
 brew_pkg "git"
-brew_pkg "gnupg"
-brew_pkg "pass"
 
-brew_cask "keybase"
 
 # Code hosted on github
-github "mavcunha/selecta" into: "${HOME}/Projects"
+github "mavcunha/selecta" "${HOME}/Projects"
 
 ##################
 # CPAN configuration directory
