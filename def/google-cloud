@@ -1,0 +1,8 @@
+# vim: ft=sh
+
+use "brew"
+
+# python requirement 2.7
+brew_pkg "python@2"
+
+brew_cask "google-cloud-sdk"
