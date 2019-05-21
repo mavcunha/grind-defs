@@ -1,0 +1,4 @@
+# vim: ft=sh
+use "appdmg"
+
+appdmg "PyCharm" "https://download-cf.jetbrains.com/python/pycharm-community-2019.1.2.dmg"

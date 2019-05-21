@@ -1,8 +1,5 @@
 # vim: ft=sh
 use "brew"
-use "appdmg"
 
 brew_pkg "python"
 brew_pkg "python@2"
-
-appdmg "PyCharm" "https://download-cf.jetbrains.com/python/pycharm-professional-2019.1.2.dmg"

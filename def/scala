@@ -1,0 +1,8 @@
+# vim: ft=sh
+
+use "brew"
+
+do_run "brew_cask 'adoptopenjdk' "
+  unless "/usr/libexec/java_home -v 1.8"
+
+brew_pkg "sbt"
