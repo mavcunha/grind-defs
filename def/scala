@@ -2,7 +2,9 @@
 
 use "brew"
 
-do_run "brew_cask 'adoptopenjdk' "
+brew_tap "adoptopenjdk/openjdk"
+
+do_run "brew_cask 'adoptopenjdk8' "
   unless "/usr/libexec/java_home -v 1.8"
 
 brew_pkg "sbt"
